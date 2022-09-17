@@ -107,13 +107,13 @@ public:
 	}
 	~SavetoFile(){}
 };
-class LoadFromFile :public Task
+class LoadFromFile
 {
 	string s;
 public:
-	LoadFromFile()
+	LoadFromFile(string path)
 	{		
-		ifstream outfile("Task.txt");
+		ifstream outfile(path);
 		if (outfile.is_open())
 		{
 			cout << "File load opened.\n";
@@ -169,7 +169,7 @@ public:
 	}
 	void load()
 	{
-		LoadFromFile lo;
+		LoadFromFile lo("Task.txt");
 	}
 	void searchbyname()
 	{
